@@ -1,0 +1,192 @@
+/* Basic styling for the product details container */
+.product-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-top: 60px;
+}
+
+/* Styling for the product image */
+.product-image {
+    height: 595px;
+    width: 519px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+}
+
+/* Styling for the product title */
+.product-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Styling for the product price */
+.product-price {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Styling for the product rating */
+.product-rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.product-detailsll{
+    margin-left: 15px;
+}
+
+.product-rating p {
+    margin-right: 5px;
+    font-size: 19px;
+}
+
+/* Styling for the product description */
+.product-description {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.div-product{
+    display: flex;
+}
+
+
+.add-to-bag-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.cart-icon {
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .product-details {
+        padding: 10px;
+        margin-top: 60px;
+
+    }
+
+    /*.category-data .uldata{*/
+    /*    display: flex;*/
+    /*    flex-direction: row;*/
+    /*    flex-wrap: nowrap;*/
+    /*    justify-content: space-between;*/
+    /*    align-items: stretch;*/
+    /*}*/
+
+    .div-product {
+        display: flex;
+        flex-direction: column;
+        display: contents;
+    }
+    .product-image {
+        width: 100%; /* Set the width to 100% to maintain aspect ratio */
+        max-width: 361px;
+        max-height: 424px;
+        height: auto; /* Allow the height to adjust automatically */
+    }
+
+    .product-title {
+        font-size: 20px;
+    }
+
+    .product-price {
+        font-size: 18px;
+    }
+
+    .product-rating {
+        font-size: 14px;
+    }
+
+    .product-description {
+        font-size: 14px;
+    }
+}
+
+.productdata{
+    margin-left: 15px;
+}
+
+
+/* Styling for the category data container */
+.category-data {
+    margin-top: 30px;
+}
+
+/* Styling for the category data header */
+.category-data h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Styling for the list of products */
+.category-data .uldata {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scroll if content overflows */
+    gap: 20px; /* Add some spacing between items */
+    padding: 10px; /* Add some padding for aesthetics */
+}
+
+/* Styling for each product item */
+.category-data .uldata .product-category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    min-width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    justify-content: space-around;
+}
+
+/* Styling for the product image */
+.category-data .uldata .product-category .catogeryimag {
+    width: 100px;
+
+    border-radius: 8px;
+}
+
+/* Styling for the product title */
+.category-data .uldata .product-category p {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Styling for the product price */
+.category-data .uldata .product-category p.price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #eab308; /* Set the price color to the desired yellow color */
+}
+
+/* Media query for responsive layout */
+@media screen and (max-width: 768px) {
+    .category-data .uldata {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .category-data .uldata .product-category {
+        min-width: 150px;
+    }
+}

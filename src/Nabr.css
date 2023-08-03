@@ -1,0 +1,40 @@
+.navbar {
+    top: 0;
+    display: flex;
+    padding: 10px;
+    background-color: #a29d9d;
+    position: fixed;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+    width: 30%;
+}
+
+.search-bar input {
+    border-radius: 6px;
+    width: 88%;
+    border: none;
+    outline: none;
+    padding: 5px;
+}
+
+.user-icon {
+    margin-right: 18px;
+    width: 8%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.allshpoingestorelcon{
+    font-size: 1.5rem;
+}
+/* Add any additional styles as needed */
