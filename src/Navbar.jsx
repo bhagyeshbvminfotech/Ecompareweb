@@ -1,10 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import SearchIcon from '@mui/icons-material/Search';
 import './Nabr.css';
+import Cart from "./Cart";
+import Modal from "react-modal";
 
-function Navbar() {
+function Navbar({bag,setBag}) {
     return (
         <nav className="navbar">
             <div className="search-bar">
@@ -13,7 +15,10 @@ function Navbar() {
             </div>
             <div className="user-icon">
                 <AccountCircleIcon />
-                <ShoppingCartIcon className='allshpoingestorelcon'/>
+                <div className="cart-wrapper">
+                    <span className="cart-item-count">{bag.length}</span>
+                    <Cart bag={bag} setBag={setBag} />
+                </div>
             </div>
         </nav>
     )

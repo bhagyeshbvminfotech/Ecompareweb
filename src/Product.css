@@ -46,9 +46,9 @@
 
 .two-fild{
     display: flex;
-    width: 100%;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    width: 93%;
 }
 
 .toly{

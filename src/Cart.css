@@ -1,0 +1,100 @@
+.model{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.imgall{
+    margin-right: 10px;
+    width: 60px;
+}
+
+/* Cart.css */
+.model {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.imgall {
+    width: 50px; /* Set the desired image width */
+    height: 50px; /* Set the desired image height */
+    margin-right: 10px;
+}
+
+strong {
+    font-weight: bold;
+}
+
+button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+}
+
+.shopping-bag-icon {
+    cursor: pointer;
+}
+
+.modal {
+    text-align: center;
+}
+
+/* Style the overlay */
+.ReactModal__Overlay {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Style the content inside the modal */
+.ReactModal__Content {
+    max-width: 70%;
+    height: 30%;
+    margin: auto;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+
+.totaldiv{
+    display: flex;
+    width: 100%;
+    gap: 40px;
+    justify-content: flex-end;
+}
+
+.count{
+    display: flex;
+    width: 7%;
+    gap: 7px;
+}
+
+.cart-wrapper {
+    position: relative;
+    margin-top: 10px; /* Adjust the margin-top value as needed */
+}
+
+.cart-item-count {
+    position: absolute;
+    top: -12px;
+    right: -10px;
+    background-color: #42bc42;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 50%;
+    font-size: 12px;
+
+}

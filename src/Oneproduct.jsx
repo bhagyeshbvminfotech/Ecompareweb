@@ -3,8 +3,9 @@ import axios from "axios";
 import { useParams ,useNavigate } from "react-router-dom";
 import "./Oneproduct.css";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import RemoveShoppingCartIcon from "@mui/material/SvgIcon/SvgIcon";
 
-function Oneproduct() {
+function Oneproduct({Shoppingcart}) {
     const { id } = useParams();
     const [product, setProduct] = useState(null);
     const [categoryData, setCategoryData] = useState([]);
@@ -74,6 +75,7 @@ function Oneproduct() {
     };
 
 
+
     return (
         <div className="product-details">
             {product ? (
@@ -89,17 +91,19 @@ function Oneproduct() {
                         <p>{product.rating.count} reviews</p>
                     </div>
                     <p className="product-description">{product.description}</p>
-                        <button className="add-to-bag-button">
-                            Add to bag
-                            <ShoppingCartIcon className="cart-icon" />
-                        </button>
+
+                            <button className="add-to-bag-button" onClick={(event)=>Shoppingcart(event,product)}>
+                                Add to bag
+                                <ShoppingCartIcon className="cart-icon" />
+                            </button>
+
                     </div>
                 </div>
             ) : (
                 <p>Loading product details...</p>
             )}
 
-            <div >
+            <div>
             {categoryData.length > 0 && (
                 <div className="category-data">
                     <h2 style={{ borderBottom: '2px solid black' }}>You may also be interested</h2>
