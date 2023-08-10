@@ -5,7 +5,9 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useNavigate } from "react-router-dom";
 import Filter from "./Filter";
 import ScrollButton from "./ScrollButton";
-import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
+import CheckIcon from '@mui/icons-material/Check';
+
+
 
 const ProductList = ({ bag, setBag, Shoppingcart }) => {
     const [products, setProducts] = useState([]);
@@ -48,8 +50,9 @@ const ProductList = ({ bag, setBag, Shoppingcart }) => {
             {loading ? (
                 <p>Loading...</p>
             ) : (
-                <>
+                <div>
                     <Filter products={products} onFilterChange={handleFilterChange} />
+
                     <ul className="product_div">
                         {products.map((product) => {
                             const showProduct = selectedOpction.length === 0 || selectedOpction.includes(product.category);
@@ -64,7 +67,9 @@ const ProductList = ({ bag, setBag, Shoppingcart }) => {
                                         <div className="two-fild">
                                             <p>${product.price}</p>
                                             {isInBag(product.id) ? (
-                                                <RemoveShoppingCartIcon/>
+                                                <button className="add-to-bag-button">
+                                                    <CheckIcon/>
+                                                </button>
                                             ) : (
                                                 <ShoppingCartIcon
                                                     className="toly"
@@ -78,7 +83,7 @@ const ProductList = ({ bag, setBag, Shoppingcart }) => {
                             ) : null;
                         })}
                     </ul>
-                </>
+                </div>
             )}
             <ScrollButton />
         </div>

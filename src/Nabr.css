@@ -2,7 +2,7 @@
     top: 0;
     display: flex;
     padding: 10px;
-    background-color: #a29d9d;
+    background-color: #000000;
     position: fixed;
     width: 100%;
     justify-content: space-between;
@@ -28,13 +28,14 @@
 }
 
 .user-icon {
-    margin-right: 18px;
+    gap: 13px;
     width: 8%;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+
 }
 
 .allshpoingestorelcon{
     font-size: 1.5rem;
 }
-/* Add any additional styles as needed */
+

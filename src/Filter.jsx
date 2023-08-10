@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-
-function Filter({ products,onFilterChange }) {
+import './Filter.css'
+function Filter({onFilterChange }) {
     const [selectedOptions, setSelectedOptions] = useState([]);
 
     const handleCheckboxChange = (option) => {
@@ -54,27 +54,6 @@ function Filter({ products,onFilterChange }) {
                     Electronics
                 </label>
             </div>
-            {/*<div className="Price">*/}
-            {/*    <h3>Price Range</h3>*/}
-            {/*    <label>*/}
-            {/*        Min Price:*/}
-            {/*        <input*/}
-            {/*            type="number"*/}
-            {/*            value={minPrice}*/}
-            {/*            onChange={(e) => setMinPrice(e.target.value)}*/}
-            {/*        />*/}
-            {/*    </label>*/}
-            {/*    <label>*/}
-            {/*        Max Price:*/}
-            {/*        <input*/}
-            {/*            type="number"*/}
-            {/*            value={maxPrice}*/}
-            {/*            onChange={(e) => setMaxPrice(e.target.value)}*/}
-            {/*        />*/}
-            {/*    </label>*/}
-            {/*    <button onClick={handleOkButtonClick}>OK</button>*/}
-            {/*</div>*/}
-
 
         </>
     );

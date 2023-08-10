@@ -73,7 +73,19 @@
     font-size: 20px;
 }
 
+.breadcrumb {
+    margin-top: 10px;
+    font-size: 20px;
+}
 
+.breadcrumb a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
 
 @media screen and (max-width: 768px) {
     .product-details {
@@ -82,13 +94,8 @@
 
     }
 
-    /*.category-data .uldata{*/
-    /*    display: flex;*/
-    /*    flex-direction: row;*/
-    /*    flex-wrap: nowrap;*/
-    /*    justify-content: space-between;*/
-    /*    align-items: stretch;*/
-    /*}*/
+
+
 
     .div-product {
         display: flex;

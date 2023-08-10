@@ -3,9 +3,9 @@ import axios from "axios";
 import { useParams ,useNavigate } from "react-router-dom";
 import "./Oneproduct.css";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import RemoveShoppingCartIcon from "@mui/material/SvgIcon/SvgIcon";
+import CheckIcon from '@mui/icons-material/Check';
 
-function Oneproduct({Shoppingcart}) {
+function Oneproduct({Shoppingcart,bag}) {
     const { id } = useParams();
     const [product, setProduct] = useState(null);
     const [categoryData, setCategoryData] = useState([]);
@@ -74,13 +74,25 @@ function Oneproduct({Shoppingcart}) {
         navigate(`/product/${item.id}`);
     };
 
+    const isInBag = (productId) => {
+        return bag.some(item => item.id === productId);
+    };
 
+    const navigateToProductPage = () => {
+        navigate(`/product/`); // Navigate to the "/product" page
+    };
 
     return (
         <div className="product-details">
             {product ? (
-                <div className='div-product'>
-                    <div >
+                <div >
+                    <div className="breadcrumb">
+                        <a onClick={navigateToProductPage}>Home\</a>
+                        <a>{product.category}\</a>
+                    </div>
+                    <br></br>
+                    <div className='div-product'>
+                    <div>
                         <img className="product-image" src={product.image} alt={product.title} />
                     </div>
                     <div className='product-detailsll'>
@@ -92,11 +104,21 @@ function Oneproduct({Shoppingcart}) {
                     </div>
                     <p className="product-description">{product.description}</p>
 
+
+
+                        {isInBag(product.id) ? (
+                            <button className="add-to-bag-button">
+                               <CheckIcon/>
+                                <ShoppingCartIcon className="cart-icon" />
+                            </button>
+                        ) : (
                             <button className="add-to-bag-button" onClick={(event)=>Shoppingcart(event,product)}>
                                 Add to bag
                                 <ShoppingCartIcon className="cart-icon" />
                             </button>
+                        )}
 
+                    </div>
                     </div>
                 </div>
             ) : (

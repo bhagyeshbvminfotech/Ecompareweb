@@ -39,7 +39,7 @@ function Cart({ bag, setBag }) {
 
     return (
         <>
-            <ShoppingCartIcon onClick={prouctstore} />
+            <ShoppingCartIcon onClick={prouctstore} style={{color:"white"}}/>
             <Modal
                 isOpen={isModalOpen}
                 onRequestClose={closeModal}
