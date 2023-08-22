@@ -27,7 +27,6 @@ function Cart({ bag, setBag }) {
     }
 
     function handleDeleteItem(index) {
-        console.log("Deleted item at index:", index);
         const updatedBag = [...bag];
         updatedBag.splice(index, 1);
         setBag(updatedBag);
@@ -49,19 +48,22 @@ function Cart({ bag, setBag }) {
                     },
                     content: {
                         maxWidth: '70%',
-                        height: '30%',
+                        height: '50%',
                         margin: 'auto',
                         background: 'white',
                         borderRadius: '8px',
-                        padding: '20px',
+                        padding: '0px',
+                        overflow:'hidden'
                     }
                 }}
             >
                 <div className='model'>
+                    <div className="close">
                     <h2>Shopping Bag</h2>
                     <CloseIcon onClick={closeModal}>Close Modal</CloseIcon>
+                    </div>
                 </div>
-
+                <div style={{overflowY:"scroll",height:"338px"}}>
                 {bag && bag.map((item, index) => (
                     <div key={index} style={{ marginBottom: '10px' }}>
                         <div style={{
@@ -92,6 +94,7 @@ function Cart({ bag, setBag }) {
                     </div>
 
                 ))}
+                </div>
                 {bag.length === 0 && <div>Your shopping bag is empty.</div>}
                 <div className='order-total'>
 

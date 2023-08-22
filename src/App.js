@@ -3,7 +3,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ProductList from "./ProductList";
 import Navbar from "./Navbar";
 import Oneproduct from "./Oneproduct";
+import TackList from "./TackList";
 import Cardata from "./Cardata";
+import CardModel from "./CardModel";
+
 function App() {
     const [bag, setBag] = useState([]);
     const Shoppingcart = (event, product) => {
@@ -23,12 +26,12 @@ function App() {
     };
 
     return (
-        <Router>
-            <Navbar bag={bag} setBag={setBag} />
+        <Router >
+            {/*<Navbar bag={bag} setBag={setBag} />*/}
             <Routes>
                 <Route path="/Product" element={<ProductList bag={bag} setBag={setBag} Shoppingcart={Shoppingcart} />} />
                 <Route path="/product/:id" element={<Oneproduct  Shoppingcart={Shoppingcart} bag={bag}/>} />
-                <Route path="/car" element={<Cardata/>} />
+                <Route path="/tacklist" element={<TackList/>} />
             </Routes>
         </Router>
     );

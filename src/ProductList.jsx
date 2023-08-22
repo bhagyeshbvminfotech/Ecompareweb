@@ -14,8 +14,12 @@ const ProductList = ({ bag, setBag, Shoppingcart }) => {
     const [loading, setLoading] = useState(true);
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [selectedOpction, setSelectedOpction] = useState([]);
-
+    const [minPrice, setMinPrice] = useState();
+    const [maxPrice, setMaxPrice] = useState();
     const navigate = useNavigate();
+
+
+
     useEffect(() => {
         fetchProducts();
     }, []);
@@ -44,43 +48,58 @@ const ProductList = ({ bag, setBag, Shoppingcart }) => {
         return bag.some(item => item.id === productId);
     };
 
+    const isNumeric = (value) => {
+        return !isNaN(parseFloat(value)) && isFinite(value);
+    };
+
 
     return (
         <div className="roots">
             {loading ? (
                 <p>Loading...</p>
             ) : (
-                <div>
-                    <Filter products={products} onFilterChange={handleFilterChange} />
+                <div className='alldiv'>
+                    <Filter products={products}
+                            onFilterChange={handleFilterChange}
+                            minPrice={minPrice}
+                            maxPrice={maxPrice}
+                            onMinPriceChange={(value) => setMinPrice(value)}
+                            onMaxPriceChange={(value) => setMaxPrice(value)}/>
 
                     <ul className="product_div">
                         {products.map((product) => {
-                            const showProduct = selectedOpction.length === 0 || selectedOpction.includes(product.category);
+                            const showProduct =
+                                (selectedOpction.length === 0 || selectedOpction.includes(product.category)) &&
+                                ((minPrice === '' || !isNumeric(minPrice)) || product.price >= parseFloat(minPrice)) &&
+                                ((maxPrice === '' || !isNumeric(maxPrice)) || product.price <= parseFloat(maxPrice));
 
-                            return showProduct ? (
-                                <li key={product.id} style={{ listStyle: "none" }}>
-                                    <div className="product-card" onClick={() => handleProductClick(product)}>
-                                        <img src={product.image} alt={product.title} />
-                                        <div className="tittile">
-                                            <p>{product.title}</p>
+                            if (showProduct) {
+                                return (
+                                    <li key={product.id} style={{ listStyle: "none" }}>
+                                        <div className="product-card" onClick={() => handleProductClick(product)}>
+                                            <img src={product.image} alt={product.title} />
+                                            <div className="tittile">
+                                                <p>{product.title}</p>
+                                            </div>
+                                            <div className="two-fild">
+                                                <p>${product.price}</p>
+                                                {isInBag(product.id) ? (
+                                                    <button className="add-to-bag-button">
+                                                        <CheckIcon />
+                                                    </button>
+                                                ) : (
+                                                    <ShoppingCartIcon
+                                                        className="toly"
+                                                        onClick={(event) => Shoppingcart(event, product)}
+                                                    />
+                                                )}
+                                            </div>
                                         </div>
-                                        <div className="two-fild">
-                                            <p>${product.price}</p>
-                                            {isInBag(product.id) ? (
-                                                <button className="add-to-bag-button">
-                                                    <CheckIcon/>
-                                                </button>
-                                            ) : (
-                                                <ShoppingCartIcon
-                                                    className="toly"
-                                                    onClick={(event) => Shoppingcart(event, product)}
-                                                />
-                                            )}
-
-                                        </div>
-                                    </div>
-                                </li>
-                            ) : null;
+                                    </li>
+                                );
+                            } else {
+                                return null;
+                            }
                         })}
                     </ul>
                 </div>

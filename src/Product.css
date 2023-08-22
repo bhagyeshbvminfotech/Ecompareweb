@@ -37,7 +37,9 @@
 }
 
 .product_div{
-    width: calc(100% - 50px);
+    /*width: calc(100% - 50px);*/
+    padding: 0;
+    width: calc(100% - 28%);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -75,4 +77,15 @@
     font-size: 15px;
 }
 
+.alldiv{
+    display: flex;
+    justify-content: space-evenly;
+}
 
+@media screen and (max-width: 599px) {
+.alldiv{
+    display: flex;
+    flex-direction: column;
+    margin-left: 109px;
+}
+}

@@ -98,3 +98,11 @@ button:disabled {
     font-size: 12px;
 
 }
+
+.close{
+    display: flex;
+    width: 100%;
+    /* flex-direction: row; */
+    justify-content: space-between;
+    align-items: center;
+}

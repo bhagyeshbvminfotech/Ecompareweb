@@ -37,7 +37,6 @@ function Oneproduct({Shoppingcart,bag}) {
             );
 
             const idAsNumber = parseInt(id, 10);
-            console.log(idAsNumber)
 
             const filteredData = response.data.filter((item) => item.id !== idAsNumber);
 
@@ -79,7 +78,7 @@ function Oneproduct({Shoppingcart,bag}) {
     };
 
     const navigateToProductPage = () => {
-        navigate(`/product/`); // Navigate to the "/product" page
+        navigate(`/product/`);
     };
 
     return (

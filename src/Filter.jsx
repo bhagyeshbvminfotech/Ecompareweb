@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import './Filter.css'
-function Filter({onFilterChange }) {
+function Filter({onFilterChange,minPrice, maxPrice, onMinPriceChange, onMaxPriceChange}) {
     const [selectedOptions, setSelectedOptions] = useState([]);
 
     const handleCheckboxChange = (option) => {
@@ -53,8 +53,26 @@ function Filter({onFilterChange }) {
                     />
                     Electronics
                 </label>
-            </div>
 
+                <div className="price-filter" style={{ display: "flex", flexDirection: "column" ,marginTop:'20px'}}>
+                    <h3>Price</h3>
+                    <label>Min Price:</label>
+                    <input
+                        type="number"
+                        value={isNaN(minPrice) ? '' : minPrice}
+                        onChange={(e) => onMinPriceChange(parseFloat(e.target.value))}
+                        className="price-input"
+                    />
+                    <label>Max Price:</label>
+                    <input
+                        type="number"
+                        value={isNaN(maxPrice) ? '' : maxPrice} // Convert NaN to an empty string to prevent the warning
+                        onChange={(e) => onMaxPriceChange(parseFloat(e.target.value))}
+                        className="price-input"
+                    />
+
+                </div>
+            </div>
         </>
     );
 }

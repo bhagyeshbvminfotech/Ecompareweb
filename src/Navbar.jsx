@@ -18,15 +18,6 @@ function Navbar({bag,setBag}) {
         fetchProducts();
     }, []);
 
-    console.log(filteredProducts);
-
-    // useEffect(() => {
-    //     const filtered = products.filter((product) =>
-    //         product.title.toLowerCase().includes(searchQuery.toLowerCase())
-    //     );
-    //     setFilteredProducts(filtered);
-    // }, [searchQuery, products]);
-
     useEffect(() => {
         const filtered = searchQuery
             ? products.filter((product) =>
@@ -68,7 +59,7 @@ function Navbar({bag,setBag}) {
             <div className="user-icon">
                 <AccountCircleIcon  style={{color:"white"}}/>
                 <div className="cart-wrapper">
-                    <span className="cart-item-count">{bag.length}</span>
+                    {bag.length > 0 &&<span className="cart-item-count">{bag.length}</span>}
                     <Cart bag={bag} setBag={setBag} />
                 </div>
             </div>
