@@ -1,0 +1,155 @@
+.Category{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.select-username label {
+    margin-right: 10px;
+}
+
+.select-username select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+h3 {
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+label {
+    margin-top: 10px;
+}
+
+.price-input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 100%;
+    margin-top: 3px;
+}
+
+.price-input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+
+
+.dropdown-check-list .anchor {
+    width: 80%;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 50px 5px 10px;
+    border: 1px solid #ccc;
+}
+
+.dropdown-check-list .anchor:after {
+    position: absolute;
+    content: "";
+    border-left: 2px solid #f7fff6;
+    border-top: 2px solid #f7fff6;
+    padding: 5px;
+    right: 10px;
+    top: 20%;
+    -moz-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+
+.dropdown-check-list .anchor:active:after {
+    right: 8px;
+    top: 21%;
+}
+
+.dropdown-check-list ul.items {
+    padding: 2px;
+    display: none;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.dropdown-check-list ul.items li {
+    list-style: none;
+}
+
+.dropdown-check-list.visible .anchor {
+    color: #0094ff;
+}
+
+.dropdown-check-list.visible .items {
+    display: block;
+}
+
+.modall{
+    border-radius: 25px;
+    display: inline-block;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    position: absolute;
+    top: 46%;
+    transform: translate(236%, -46%);
+    height: 80%;
+    width: 26%;
+    background-color: #282e33;
+    color: #b6c2cf;
+}
+
+/* Filter.css */
+.filter-container {
+    background-color: #859437;
+    display: flex;
+    margin-top: 1px;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+
+.filter-button {
+    margin: 7px;
+    display: flex;
+    align-items: center;
+    background-color: #485159;
+    color: #b6c2cf;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.filter-button:hover {
+    background-color: #0056b3;
+}
+
+.filter-icon {
+    margin-right: 8px;
+    font-size: 20px;
+}
+
+.keyword{
+    width: 97%;
+    height: 28px;
+    margin-bottom: 15px;
+    background-color: #22272b;
+    color: #b6c2cf;
+}
+
+.user-filter{
+    width: 148px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
