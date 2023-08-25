@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import './TackAdd.css'
+import './TackAdd.css';
+import axios from "axios";
 
-function TackAdd({data,setData}) {
-    const [allTacks,setAllTacks]=useState([]);
+function TackAdd({ data, setData }) {
     const [isOpen, setIsOpen] = useState(false);
     const [tackData, setTackData] = useState({
         title: "",
         description: "",
         userName: "",
-        status:"To Do"
+        status: "To Do"
     });
-
 
     const openModal = () => {
         setIsOpen(true);
@@ -30,7 +29,6 @@ function TackAdd({data,setData}) {
     };
 
     const addTack = () => {
-
         const newTack = {
             id: uuidv4(),
             ...tackData,
@@ -47,15 +45,24 @@ function TackAdd({data,setData}) {
         });
 
         setData(updatedData);
+console.log(data,"..........",updatedData)
+        // Update Firebase with the new tack data using Axios
+        axios.put('https://tackdata-23032-default-rtdb.firebaseio.com/yourDataPath.json', updatedData)
+            .then(response => {
+                console.log('Data successfully updated in Firebase:', response.data);
+            })
+            .catch(error => {
+                console.error('Error updating data in Firebase:', error);
+            });
 
         setTackData({
             title: "",
             description: "",
             userName: "",
-            status:"To Do"
+            status: "To Do"
         });
         closeModal();
-       console.log(data,"data",allTacks)
+        console.log(data, "data");
     };
 
     return (

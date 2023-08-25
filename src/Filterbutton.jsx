@@ -2,11 +2,15 @@ import React, { useEffect, useState } from "react";
 import './Filter.css';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import PersonIcon from '@mui/icons-material/Person';
+import CheckboxAdd from "./CheckboxAdd";
 
-function Filterbutton({ data, setteacksuser, setSelectedUsername, selectedUsername }) {
+
+function Filterbutton({ data, setteacksuser, setSelectedUsername, selectedUsername,card,setCard}) {
     const [usernameOptions, setUsernameOptions] = useState([]);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
+
+
 
     useEffect(() => {
         const allUsernames = data.flatMap(entry => entry.tacks.map(tack => tack.userName));
@@ -74,7 +78,7 @@ function Filterbutton({ data, setteacksuser, setSelectedUsername, selectedUserna
                             &times;
                         </span>
                         <h2>Search Title</h2>
-                        <input type="text" className="keyword" placeholder="Enter keywoard.."></input>
+                        <input type="text" className="keyword" placeholder="Enter keywoard.."/>
                     </div>
                     <div className={`dropdown-check-list ${isDropdownOpen ? 'visible' : ''}`}>
                         <span className="anchor" onClick={handleDropdownToggle}>Select User</span>
@@ -101,7 +105,9 @@ function Filterbutton({ data, setteacksuser, setSelectedUsername, selectedUserna
                             ))}
                         </ul>
                     </div>
+                    <CheckboxAdd/>
                 </div>
+
             )}
 
         </div>

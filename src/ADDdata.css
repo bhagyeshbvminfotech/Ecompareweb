@@ -1,0 +1,13 @@
+.ADDdata{
+    width: 97%;
+    height: 28px;
+    margin-bottom: 15px;
+    background-color: #22272b;
+    color: #b6c2cf;
+    margin-top: 15px;
+
+}
+
+.checked {
+    text-decoration: line-through;
+}
